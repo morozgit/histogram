@@ -1,5 +1,0 @@
-module histogram
-typeinfo apphistogram.qmltypes
-prefer :/histogram/
-Main 1.0 Main.qml
-
