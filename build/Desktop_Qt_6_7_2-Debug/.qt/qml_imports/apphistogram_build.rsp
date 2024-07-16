@@ -1,0 +1,14 @@
+-rootPath
+/home/user/C++/Qt/histogram
+-cmake-output
+-output-file
+/home/user/C++/Qt/histogram/build/Desktop_Qt_6_7_2-Debug/.qt/qml_imports/apphistogram_build.cmake
+-importPath
+/home/user/C++/Qt/histogram/build/Desktop_Qt_6_7_2-Debug/histogram
+-importPath
+/home/user/C++/Qt/histogram/build/Desktop_Qt_6_7_2-Debug
+-importPath
+/home/user/Qt/6.7.2/gcc_64/./qml
+-qrcFiles
+/home/user/C++/Qt/histogram/build/Desktop_Qt_6_7_2-Debug/.qt/rcc/qmake_histogram.qrc
+/home/user/C++/Qt/histogram/build/Desktop_Qt_6_7_2-Debug/.qt/rcc/apphistogram_raw_qml_0.qrc

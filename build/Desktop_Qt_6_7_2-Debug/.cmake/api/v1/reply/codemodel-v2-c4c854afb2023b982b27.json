@@ -1,0 +1,169 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-a4f5e52ec394abb25a78.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "histogram",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "all_qmllint::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-all_qmllint-Debug-0c2fd554756bb5928ffa.json",
+					"name" : "all_qmllint",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "all_qmllint_json::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-all_qmllint_json-Debug-1f931ea77d1a2a04783a.json",
+					"name" : "all_qmllint_json",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "all_qmllint_module::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-all_qmllint_module-Debug-b3ec912a2b8644e39e81.json",
+					"name" : "all_qmllint_module",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "all_qmltyperegistrations::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-all_qmltyperegistrations-Debug-18816617ff1832e85690.json",
+					"name" : "all_qmltyperegistrations",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "apphistogram::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-apphistogram-Debug-755a6a367369957abe67.json",
+					"name" : "apphistogram",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "apphistogram_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-apphistogram_autogen-Debug-7e367eb68532cdf44725.json",
+					"name" : "apphistogram_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "apphistogram_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-apphistogram_autogen_timestamp_deps-Debug-8b0a1da67632127edfc8.json",
+					"name" : "apphistogram_autogen_timestamp_deps",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "apphistogram_qmlimportscan::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-apphistogram_qmlimportscan-Debug-e22f96c5aa0242ae791a.json",
+					"name" : "apphistogram_qmlimportscan",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "apphistogram_qmllint::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-apphistogram_qmllint-Debug-1c125c0fe883d71c0f0c.json",
+					"name" : "apphistogram_qmllint",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "apphistogram_qmllint_json::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-apphistogram_qmllint_json-Debug-6a708890ea41b3dda0da.json",
+					"name" : "apphistogram_qmllint_json",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "apphistogram_qmllint_module::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-apphistogram_qmllint_module-Debug-1781d062571b14c2ffcb.json",
+					"name" : "apphistogram_qmllint_module",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "apphistogram_qmltyperegistration::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-apphistogram_qmltyperegistration-Debug-ce2875ce42bffc9d8f64.json",
+					"name" : "apphistogram_qmltyperegistration",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "apphistogram_tooling::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-apphistogram_tooling-Debug-3e3eeef1415ad1a63ae8.json",
+					"name" : "apphistogram_tooling",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/user/C++/Qt/histogram/build/Desktop_Qt_6_7_2-Debug",
+		"source" : "/home/user/C++/Qt/histogram"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 6
+	}
+}

@@ -1,0 +1,7 @@
+<RCC>
+  <qresource prefix="/histogram/">
+    <file alias="Main.qml">/home/user/C++/Qt/histogram/Main.qml</file>
+    <file alias="qml.qrc">/home/user/C++/Qt/histogram/qml.qrc</file>
+  </qresource>
+</RCC>
+
