@@ -59,37 +59,4 @@ ApplicationWindow {
             }
         }
 
-
-    // Rectangle {
-    //     id: rectangle_button
-    //     color: "red"
-    //     width: main_window.width - 20; height: parent.height / 4
-    //     anchors.leftMargin: 200
-    //     Button {
-    //         id: openButton
-    //         text: "Открыть"
-    //         onClicked: fileDialog.open()
-    //     }
-    //     Button {
-    //         id: startButton
-    //         text: "Старт"
-    //         onClicked: fileReader.startProcessing()
-    //         anchors.left: openButton.right
-    //         anchors.leftMargin: 25
-    //     }
-    //     Button {
-    //         id: pauseButton
-    //         text: "Пауза"
-    //         onClicked: fileReader.pauseProcessing()
-    //         anchors.left: startButton.right
-    //         anchors.leftMargin: 25
-    //     }
-    //     Button {
-    //         id: cancelButton
-    //         text: "Отмена"
-    //         onClicked: fileReader.cancelProcessing()
-    //         anchors.left: pauseButton.right
-    //         anchors.leftMargin: 25
-    //     }
-    // }
 }
