@@ -40,41 +40,44 @@ void FileReader::processFile() {
         if (isCancelled) {
             break;
         }
-        QMutexLocker locker(&mutex);
-        if (isPaused) {
-            locker.unlock();
-            QThread::msleep(100);
-            continue;
-        }
+        // QMutexLocker locker(&mutex);
+        // if (isPaused) {
+        //     locker.unlock();
+        //     QThread::msleep(100);
+        //     continue;
+        // }
 
         QString line = stream.readLine();
+        qDebug() << "line" << line;
         QStringList words = line.split(QRegularExpression("\\W+"), Qt::SkipEmptyParts);
+        qDebug() << "words" << words.capacity();
         for (const QString &word : words) {
             wordCount[word.toLower()]++;
+            qDebug() << "word" << &word;
         }
 
-        progress += words.size();
-        emit progressChanged(progress);
+        // progress += words.size();
+        // emit progressChanged(progress);
 
-        // Convert QMap to QList<QPair<QString, int>>
-        QList<QPair<QString, int>> topWords;
-        for (auto it = wordCount.constBegin(); it != wordCount.constEnd(); ++it) {
-            topWords.append(qMakePair(it.key(), it.value()));
-        }
+        // // Convert QMap to QList<QPair<QString, int>>
+        // QList<QPair<QString, int>> topWords;
+        // for (auto it = wordCount.constBegin(); it != wordCount.constEnd(); ++it) {
+        //     topWords.append(qMakePair(it.key(), it.value()));
+        // }
 
-        // Sort topWords by count
-        std::sort(topWords.begin(), topWords.end(), [](const QPair<QString, int> &a, const QPair<QString, int> &b) {
-            return a.second > b.second;
-        });
+        // // Sort topWords by count
+        // std::sort(topWords.begin(), topWords.end(), [](const QPair<QString, int> &a, const QPair<QString, int> &b) {
+        //     return a.second > b.second;
+        // });
 
-        if (topWords.size() > 15) {
-            topWords = topWords.mid(0, 15);
-        }
+        // if (topWords.size() > 15) {
+        //     topWords = topWords.mid(0, 15);
+        // }
 
-        histogramModel->updateHistogram(topWords);
+        // histogramModel->updateHistogram(topWords);
 
-        locker.unlock();
-        QThread::msleep(10); // simulate delay for "real-time" effect
+        // locker.unlock();
+        // QThread::msleep(10);
     }
 
     emit finished();

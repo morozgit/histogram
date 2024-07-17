@@ -43,10 +43,14 @@ ApplicationWindow {
                // fileReader.loadFile(fileDialog.fileUrl)
                var filePath
                if (fileDialog.selectedFile.toLocaleString().startsWith("file://")) {
-                           filePath = fileDialog.selectedFile.toLocaleString().substring(7);
+                           filePath = fileDialog.selectedFile.toLocaleString().substring(8);
                        }
+               else{
+                   console.log("else", filePath)
+               }
+
                var path = fileDialog.selectedFile.toLocaleString().substring(7);
-               console.log(filePath)
+               console.log("filePath", filePath)
                fileReader.openFile(filePath)
            }
        }
