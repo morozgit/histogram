@@ -8,6 +8,8 @@ find_package(Qt6 6.4 REQUIRED COMPONENTS Quick)
 
 qt_standard_project_setup()
 
+qt_policy(SET QTP0001 NEW)
+
 qt_add_executable(apphistogram
     main.cpp
 )
@@ -16,17 +18,15 @@ qt_add_qml_module(apphistogram
     URI histogram
     VERSION 1.0
     QML_FILES
-        Main.qml
-        RESOURCES qml.qrc
-        SOURCES FileReader.h
-        SOURCES HistogramModel.h
+        qml/Main.qml
+    RESOURCES qml.qrc
+    SOURCES src/FileReader.h
+    SOURCES src/HistogramModel.h
+    SOURCES src/FileReader.cpp
+    SOURCES src/HistogramModel.cpp
 )
 
-# Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
-# If you are developing for iOS or macOS you should consider setting an
-# explicit, fixed bundle identifier manually though.
 set_target_properties(apphistogram PROPERTIES
-#    MACOSX_BUNDLE_GUI_IDENTIFIER com.example.apphistogram
     MACOSX_BUNDLE_BUNDLE_VERSION ${PROJECT_VERSION}
     MACOSX_BUNDLE_SHORT_VERSION_STRING ${PROJECT_VERSION_MAJOR}.${PROJECT_VERSION_MINOR}
     MACOSX_BUNDLE TRUE

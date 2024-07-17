@@ -1,1 +1,10 @@
-<RCC/>
+<RCC>
+    <qresource prefix="/">
+        <file>qml/Main.qml</file>
+        <file>resources/icons/open.png</file>
+        <file>resources/icons/start.png</file>
+        <file>resources/icons/pause.png</file>
+        <file>resources/icons/cancel.png</file>
+        <file>qml/Histogram.qml</file>
+    </qresource>
+</RCC>
