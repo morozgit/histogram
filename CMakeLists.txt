@@ -19,6 +19,7 @@ qt_add_qml_module(apphistogram
     VERSION 1.0
     QML_FILES
         qml/Main.qml
+        qml/Histogram.qml
     RESOURCES qml.qrc
     SOURCES src/FileReader.h
     SOURCES src/HistogramModel.h

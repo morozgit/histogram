@@ -7,6 +7,7 @@ int main(int argc, char *argv[])
 {
     QGuiApplication app(argc, argv);
     qmlRegisterType<HistogramModel>("Histogram", 1, 0, "Histogram");
+    qmlRegisterType<HistogramModel>("FileReader", 1, 0, "FileReader");
     QQmlApplicationEngine engine;
 
     HistogramModel histogramModel;

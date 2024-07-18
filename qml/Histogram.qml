@@ -1,43 +1,66 @@
-import QtQuick
-import QtQuick.Controls 2.15
+import QtQuick 2.15
 
 Rectangle {
     id: histogram
+    width: 800
+    height: 400
     color: "white"
     border.color: "black"
     radius: 5
-    anchors.horizontalCenter: parent.horizontalCenter
 
     property var wordCounts: []
 
-    function updateHistogram() {
-        update();
-    }
-
-    Canvas {
-        id: canvas
-        anchors.fill: parent
-        onPaint: {
-            const ctx = canvas.getContext('2d');
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            const maxCount = Math.max(...wordCounts.map(w => w.count));
-            const barWidth = canvas.width / wordCounts.length;
-
-            wordCounts.forEach((word, index) => {
-                const barHeight = (word.count / maxCount) * canvas.height;
-                ctx.fillStyle = "blue";
-                ctx.fillRect(index * barWidth, canvas.height - barHeight, barWidth - 2, barHeight);
-                ctx.fillStyle = "black";
-                ctx.fillText(word.word, index * barWidth + 2, canvas.height - barHeight - 5);
-            });
+    function updateHistogram(newWordCounts) {
+        wordCounts = newWordCounts;
+        console.log("updateHistogram wordCounts", wordCounts)
+        dataModel.clear();
+        for (var i = 0; i < newWordCounts.length; i++) {
+            console.log("updateHistogram", i)
+            dataModel.append({"value": newWordCounts[i]});
         }
     }
 
-    Component.onCompleted: {
-        canvas.requestPaint();
+    ListModel {
+        id: dataModel
+        ListElement { value: 5 }
+        ListElement { value: 10 }
+        ListElement { value: 15 }
+        ListElement { value: 20 }
+        ListElement { value: 25 }
+        ListElement { value: 30 }
+        ListElement { value: 35 }
+        ListElement { value: 40 }
+        ListElement { value: 45 }
+        ListElement { value: 50 }
     }
 
-    onWordCountsChanged: {
-        updateHistogram();
+    Column {
+        anchors.centerIn: parent
+        spacing: 10
+
+        Rectangle {
+            width: parent.width
+            height: 2
+            color: "black"
+        }
+
+        Row {
+            spacing: 5
+            Repeater {
+                model: dataModel
+                Rectangle {
+                    width: 20
+                    height: model.value * 4
+                    color: "steelblue"
+                    border.color: "black"
+                }
+            }
+        }
+
+        Rectangle {
+            width: parent.width
+            height: 2
+            color: "black"
+        }
     }
 }
