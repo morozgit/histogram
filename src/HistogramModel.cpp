@@ -1,7 +1,7 @@
 #include "HistogramModel.h"
 
 HistogramModel::HistogramModel(QObject *parent)
-    : QAbstractListModel(parent)
+    : QAbstractListModel(parent), m_topWords()
 {}
 
 int HistogramModel::rowCount(const QModelIndex &parent) const {
@@ -33,7 +33,9 @@ QHash<int, QByteArray> HistogramModel::roleNames() const {
 }
 
 void HistogramModel::updateHistogram(const QList<QPair<QString, int>> &topWords) {
+    // qDebug() << "updateHistogram" << topWords;
     beginResetModel();
     m_topWords = topWords;
     endResetModel();
 }
+

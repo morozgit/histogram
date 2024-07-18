@@ -22,6 +22,7 @@ public slots:
     void cancelProcessing();
 
 signals:
+    void updateHistogram(const QList<QPair<QString, int>> &topWords);
     void progressChanged(int progress);
     void finished();
 

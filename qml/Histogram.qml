@@ -12,7 +12,7 @@ Rectangle {
 
     function updateHistogram(newWordCounts) {
         wordCounts = newWordCounts;
-        console.log("updateHistogram wordCounts", wordCounts)
+        // console.log("updateHistogram wordCounts", wordCounts)
         dataModel.clear();
         for (var i = 0; i < newWordCounts.length; i++) {
             console.log("updateHistogram", i)

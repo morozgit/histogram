@@ -36,9 +36,9 @@ ApplicationWindow {
     FileDialog {
         id: fileDialog
         onAccepted: {
-            var filePath = fileDialog.fileUrl.toString();
+            var filePath = fileDialog.selectedFile.toLocaleString();
             if (filePath.startsWith("file://")) {
-                filePath = filePath.substring(7);
+                filePath = filePath.substring(8);
             }
             fileReader.openFile(filePath);
         }
@@ -61,8 +61,9 @@ ApplicationWindow {
 
         Connections {
             target: fileReader
-            function onProgressChanged(progress) {
-                console.log("Progress:", progress);
+            function onUpdateHistogram(topWords) {
+                // console.log("Progress:", topWords);
+                histogram.updateHistogram(topWords)
             }
             // function onProcessingCompleted(processedData) {
             //     histogram.updateHistogram(processedData);

@@ -12,6 +12,8 @@ int main(int argc, char *argv[])
 
     HistogramModel histogramModel;
     FileReader fileReader;
+
+    QObject::connect(&fileReader, &FileReader::updateHistogram, &histogramModel, &HistogramModel::updateHistogram);
     engine.rootContext()->setContextProperty("fileReader", &fileReader);
     engine.rootContext()->setContextProperty("histogramModel", &histogramModel);
 

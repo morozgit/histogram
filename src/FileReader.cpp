@@ -48,7 +48,7 @@ void FileReader::processFile() {
         }
 
         QString line = stream.readLine();
-        qDebug() << "line" << line;
+        // qDebug() << "line" << line;
         QStringList words = line.split(",");
         // qDebug() << "words" << words.capacity();
         for (const QString &word : words) {
@@ -57,16 +57,14 @@ void FileReader::processFile() {
         }
 
         progress += words.size();
-        qDebug() << "progress" << progress;
+        // qDebug() << "progress" << progress;
         emit progressChanged(progress);
 
-        // Convert QMap to QList<QPair<QString, int>>
         QList<QPair<QString, int>> topWords;
         for (auto it = wordCount.constBegin(); it != wordCount.constEnd(); ++it) {
             topWords.append(qMakePair(it.key(), it.value()));
         }
 
-        // Sort topWords by count
         std::sort(topWords.begin(), topWords.end(), [](const QPair<QString, int> &a, const QPair<QString, int> &b) {
             return a.second > b.second;
         });
@@ -75,11 +73,7 @@ void FileReader::processFile() {
             topWords = topWords.mid(0, 15);
         }
 
-        if (histogramModel) {
-            qDebug() << "histogramModel" << histogramModel;
-            histogramModel->updateHistogram(topWords);
-        }
-
+        emit updateHistogram(topWords);
         locker.unlock();
         QThread::msleep(10);
     }
