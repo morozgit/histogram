@@ -2,6 +2,9 @@
 
 #include <QObject>
 #include <QAbstractListModel>
+#include <QVariantList>
+#include <QVariantMap>
+#include <QPair>
 
 class HistogramModel : public QAbstractListModel
 {
@@ -20,7 +23,7 @@ public:
     QHash<int, QByteArray> roleNames() const override;
 
 public slots:
-    void updateHistogram(const QList<QPair<QString, int>> &topWords);
+    void updateHistogram(const QVariantList &topWords);
 
 private:
     QList<QPair<QString, int>> m_topWords;

@@ -7,7 +7,10 @@
 #include <QtConcurrent/QtConcurrent>
 #include <QDebug>
 #include <QRegularExpression>
+#include <QVariantList>
+#include <QVariantMap>
 #include "HistogramModel.h"
+
 
 
 class FileReader : public QObject
@@ -22,7 +25,7 @@ public slots:
     void cancelProcessing();
 
 signals:
-    void updateHistogram(const QList<QPair<QString, int>> &topWords);
+    void updateHistogram(const QVariantList &topWords);
     void progressChanged(int progress);
     void finished();
 

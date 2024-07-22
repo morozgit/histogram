@@ -12,26 +12,19 @@ Rectangle {
 
     function updateHistogram(newWordCounts) {
         wordCounts = newWordCounts;
-        // console.log("updateHistogram wordCounts", wordCounts)
         dataModel.clear();
         for (var i = 0; i < newWordCounts.length; i++) {
-            console.log("updateHistogram", i)
-            dataModel.append({"value": newWordCounts[i]});
+            var item = newWordCounts[i];
+            if (item && item.key !== undefined && item.value !== undefined) {
+                dataModel.append({ "key": item.key, "value": item.value });
+            } else {
+                console.error("Invalid item format:", item);
+            }
         }
     }
 
     ListModel {
         id: dataModel
-        ListElement { value: 5 }
-        ListElement { value: 10 }
-        ListElement { value: 15 }
-        ListElement { value: 20 }
-        ListElement { value: 25 }
-        ListElement { value: 30 }
-        ListElement { value: 35 }
-        ListElement { value: 40 }
-        ListElement { value: 45 }
-        ListElement { value: 50 }
     }
 
     Column {
@@ -49,10 +42,21 @@ Rectangle {
             Repeater {
                 model: dataModel
                 Rectangle {
-                    width: 20
-                    height: model.value * 4
+                    width: 80
+                    height: model.value * 15
                     color: "steelblue"
                     border.color: "black"
+                    Text {
+                        id: itemtext
+                        text: qsTr(model.key + "\n " + model.value.toString())
+                        font.pixelSize: 10
+                        font.bold: true
+                        font.family: "Arial"
+                        color: "black"
+                        horizontalAlignment: Text.AlignHCenter
+                        verticalAlignment: Text.AlignVCenter
+                        wrapMode: Text.WordWrap
+                    }
                 }
             }
         }

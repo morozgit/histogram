@@ -50,14 +50,9 @@ ApplicationWindow {
 
         Histogram {
             id: histogram
+            anchors.fill: parent
         }
     }
-    // FileReader {
-    //         id: fileReader
-    //         onProcessingCompleted: {
-    //             histogram.updateHistogram(processedData);
-    //         }
-    //     }
 
         Connections {
             target: fileReader
@@ -65,8 +60,5 @@ ApplicationWindow {
                 // console.log("Progress:", topWords);
                 histogram.updateHistogram(topWords)
             }
-            // function onProcessingCompleted(processedData) {
-            //     histogram.updateHistogram(processedData);
-            // }
     }
 }

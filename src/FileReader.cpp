@@ -48,25 +48,24 @@ void FileReader::processFile() {
         }
 
         QString line = stream.readLine();
-        // qDebug() << "line" << line;
         QStringList words = line.split(",");
-        // qDebug() << "words" << words.capacity();
         for (const QString &word : words) {
             wordCount[word.toLower()]++;
-            // qDebug() << "word" << word;
         }
 
         progress += words.size();
-        // qDebug() << "progress" << progress;
         emit progressChanged(progress);
 
-        QList<QPair<QString, int>> topWords;
+        QVariantList topWords;
         for (auto it = wordCount.constBegin(); it != wordCount.constEnd(); ++it) {
-            topWords.append(qMakePair(it.key(), it.value()));
+            QVariantMap item;
+            item["key"] = it.key();
+            item["value"] = it.value();
+            topWords.append(item);
         }
 
-        std::sort(topWords.begin(), topWords.end(), [](const QPair<QString, int> &a, const QPair<QString, int> &b) {
-            return a.second > b.second;
+        std::sort(topWords.begin(), topWords.end(), [](const QVariant &a, const QVariant &b) {
+            return a.toMap().value("value").toInt() > b.toMap().value("value").toInt();
         });
 
         if (topWords.size() > 15) {
@@ -80,4 +79,3 @@ void FileReader::processFile() {
 
     emit finished();
 }
-

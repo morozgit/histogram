@@ -32,10 +32,16 @@ QHash<int, QByteArray> HistogramModel::roleNames() const {
     return roles;
 }
 
-void HistogramModel::updateHistogram(const QList<QPair<QString, int>> &topWords) {
-    // qDebug() << "updateHistogram" << topWords;
+void HistogramModel::updateHistogram(const QVariantList &topWords) {
+    QList<QPair<QString, int>> convertedList;
+    for (const QVariant &item : topWords) {
+        QVariantMap map = item.toMap();
+        QString key = map["key"].toString();
+        int value = map["value"].toInt();
+        convertedList.append(qMakePair(key, value));
+    }
+
     beginResetModel();
-    m_topWords = topWords;
+    m_topWords = convertedList;
     endResetModel();
 }
-
