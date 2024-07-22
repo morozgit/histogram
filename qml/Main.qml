@@ -57,7 +57,6 @@ ApplicationWindow {
         Connections {
             target: fileReader
             function onUpdateHistogram(topWords) {
-                // console.log("Progress:", topWords);
                 histogram.updateHistogram(topWords)
             }
     }
